@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Career Roadmap Copilot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        ```
+        <div class="sidebar">
+
+            <h2>🚀 Career Roadmap Copilot</h2>
+
+            <ul>
+                <li>📄 Upload Resume</li>
+                <li>🤖 AI Analysis</li>
+                <li>🎯 Skill Gap</li>
+                <li>🛣️ Roadmap</li>
+                <li><a href="/mock-interview">
+                        🎤 Mock Interview
+                    </a></li>
+                <li>🏢 Company Prep</li>
+            </ul>
+
+        </div>
+
+        <div class="main-content">
+
+            <h1>🚀 Career Roadmap Copilot</h1>
+
+            <p>
+                Your AI Career Mentor for Placements,
+                Interviews and Skill Growth
+            </p>
+
+            <div class="upload-section">
+
+                <h2>📄 Upload Your Resume</h2>
+
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+
+                    <input type="file" name="resume" required>
+
+                    <br><br>
+
+                    <button type="submit">
+                        Analyze Resume
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+        ```
+
+    </div>
+
+</body>
+
+</html>

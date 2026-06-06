@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Interview Questions</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <div class="sidebar">
+
+            <h2>🚀 Career Roadmap Copilot</h2>
+
+        </div>
+
+        <div class="main-content">
+
+            <h1>🎤 {{ role }} Interview</h1>
+
+            <div class="analysis-card">
+
+                <h2>Interview Questions</h2>
+
+                <pre>{{ questions }}</pre>
+
+                <form action="/evaluate-interview" method="POST">
+
+                    <input type="hidden" name="role" value="{{ role }}">
+
+                    <h3>Answer 1</h3>
+                    <textarea name="answer1" required></textarea>
+
+                    <h3>Answer 2</h3>
+                    <textarea name="answer2" required></textarea>
+
+                    <h3>Answer 3</h3>
+                    <textarea name="answer3" required></textarea>
+
+                    <h3>Answer 4</h3>
+                    <textarea name="answer4" required></textarea>
+
+                    <h3>Answer 5</h3>
+                    <textarea name="answer5" required></textarea>
+
+                    <br><br>
+
+                    <button type="submit">
+                        Evaluate Interview
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

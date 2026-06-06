@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>AI Mock Interview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        ```
+        <div class="sidebar">
+
+            <h2>🚀 Career Roadmap Copilot</h2>
+
+            <ul>
+                <li><a href="/">🏠 Dashboard</a></li>
+                <li><a href="/mock-interview">🎤 Mock Interview</a></li>
+            </ul>
+
+        </div>
+
+        <div class="main-content">
+
+            <h1>🎤 AI Mock Interview</h1>
+
+            <p>
+                Select your target role and let AI generate
+                interview questions.
+            </p>
+
+            <div class="analysis-card">
+
+                <form action="/generate-interview" method="POST">
+
+                    <select name="role" required>
+
+                        <option value="">Select Role</option>
+
+                        <option>Python Developer</option>
+                        <option>Java Developer</option>
+                        <option>Frontend Developer</option>
+                        <option>AI/ML Engineer</option>
+                        <option>Data Analyst</option>
+
+                    </select>
+
+                    <br><br>
+
+                    <button type="submit">
+                        Generate Questions
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+        ```
+
+    </div>
+
+</body>
+
+</html>

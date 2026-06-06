@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Roadmap Copilot</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <div class="sidebar">
+            <h2>🚀 Career Roadmap Copilot</h2>
+        </div>
+
+        <div class="main-content">
+
+            <h1>🤖 AI Resume Analysis</h1>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Resume Score</h3>
+                    <h2>{{ data.resume_score }}%</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Placement Chance</h3>
+                    <h2>{{ data.placement_chance }}%</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Top Skills</h3>
+                    <h2>{{ data.top_skills|length }}</h2>
+                </div>
+
+            </div>
+
+            <div class="analysis-card">
+
+                <h2>🔥 Top Skills</h2>
+
+                <ul>
+                    {% for skill in data.top_skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+
+                <h2>✅ Strengths</h2>
+
+                <ul>
+                    {% for item in data.strengths %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+
+                <h2>⚠ Weaknesses</h2>
+
+                <ul>
+                    {% for item in data.weaknesses %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+
+                <h2>📚 Missing Skills</h2>
+
+                <ul>
+                    {% for item in data.missing_skills %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+
+                <h2>🛣 Roadmap</h2>
+
+                <h3>Month 1</h3>
+                <ul>
+                    {% for item in data.roadmap.month1 %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Month 2</h3>
+                <ul>
+                    {% for item in data.roadmap.month2 %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Month 3</h3>
+                <ul>
+                    {% for item in data.roadmap.month3 %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
