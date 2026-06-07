@@ -15,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # Gemini API
-genai.configure(api_key="..............")
+genai.configure(api_key="...")
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
@@ -246,6 +246,43 @@ Professional format.
     return render_template(
         "interview_result.html",
         result=result
+    )
+@app.route("/company-prep")
+def company_prep():
+    return render_template("company_prep.html")
+@app.route("/generate-company-prep", methods=["POST"])
+def generate_company_prep():
+
+    company = request.form["company"]
+
+    prompt = f"""
+You are a placement mentor.
+
+For {company} provide:
+
+1. Company Overview
+2. Selection Process
+3. Important Technical Topics
+4. Aptitude Topics
+5. Top HR Questions
+6. Top Technical Questions
+7. Resume Tips
+8. Preparation Strategy
+
+Professional format.
+"""
+
+    try:
+        response = model.generate_content(prompt)
+        result = response.text
+
+    except Exception:
+        result = "AI service unavailable. Please try again later."
+
+    return render_template(
+        "company_result.html",
+        result=result,
+        company=company
     )
 if __name__ == "__main__":
     app.run(debug=True)

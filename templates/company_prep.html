@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Company Prep</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="main-content">
+
+        <h1>🏢 Company Specific Interview Preparation</h1>
+
+        <form action="/generate-company-prep" method="POST">
+
+            <select name="company" required>
+                <option value="">Select Company</option>
+
+                <option>TCS</option>
+                <option>Infosys</option>
+                <option>Wipro</option>
+                <option>Accenture</option>
+                <option>Cognizant</option>
+                <option>Capgemini</option>
+                <option>Google</option>
+                <option>Amazon</option>
+                <option>Microsoft</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit">
+                Generate Preparation Plan
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
